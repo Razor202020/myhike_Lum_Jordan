@@ -1,4 +1,4 @@
-import { logoutUser , onAuthReady} from '/src/authentication.js';
+import { logoutUser, onAuthReady } from '/src/authentication.js';
 
 class SiteNavbar extends HTMLElement {
     constructor() {
@@ -25,6 +25,8 @@ class SiteNavbar extends HTMLElement {
                             <li class="nav-item">
                                 <a class="nav-link" href="/">Home</a>
                             </li>
+                            <li class="nav-item"><a class="nav-link" href="/addHike.html">Add hike</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/profile.html">Profile</a></li>
                         </ul>
                         <div class="d-flex align-items-center gap-2 ms-lg-2" id="rightControls">
                             <form class="d-flex align-items-center gap-2 my-2 my-lg-0" id="navSearch" role="search">
@@ -53,7 +55,7 @@ class SiteNavbar extends HTMLElement {
         authControls.innerHTML = `<div class="btn btn-outline-light" style="visibility: hidden; min-width: 80px;">Log out</div>`;
 
         // Pass a callback that runs when Firebase reports the login status
-        onAuthReady(function(user) { // Receives the user object (or null)
+        onAuthReady(function (user) { // Receives the user object (or null)
 
             if (user) { // User is logged in
                 authControls.innerHTML = `<button class="btn btn-outline-light" id="signOutBtn" type="button" style="min-width: 80px;">Log out</button>`;
